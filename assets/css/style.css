@@ -1,6 +1,6 @@
 body {
   background-color: rgb(255, 255, 255);
-  font-family: "Roboto Mono", monospace;
+  font-family: "Roboto ", monospace;
 }
 
 .error_img {
@@ -14,4 +14,31 @@ body {
 
 .position_text {
   margin-top: -100px;
+}
+
+/* OPREC PAGE */
+
+.logo {
+  height: 100px;
+}
+
+.community-name {
+  color: white;
+}
+
+.card {
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.image-form {
+  margin-top: -310px;
+  margin-left: -40px;
+  position: sticky;
+}
+
+@media (min-width: 576px) and (max-width: 1199.98px) {
+  .image-form {
+    display: none;
+  }
 }
