@@ -51,7 +51,11 @@
           <div class="col-lg-8 offset-lg-2">
             <div class="card shadow bg-body rounded">
               <div class="card-body">
-                <form name="google-sheet" class="col-6 offset-3">
+                <form
+                  name="google-sheet"
+                  class="col-6 offset-3 needs-validation"
+                  novalidate
+                >
                   <div class="mb-3">
                     <label for="name" class="form-label">Full Name</label>
                     <input
@@ -61,7 +65,10 @@
                       aria-describedby="name"
                       name="name"
                       placeholder="ex : Joko Widodo"
+                      required
                     />
+                    <div class="invalid-feedback">Please fill this field !</div>
+                    <div class="valid-feedback">Looks good!</div>
                   </div>
 
                   <div class="mb-3">
@@ -75,6 +82,8 @@
                       placeholder="ex : Anonymous@email.com"
                       required
                     />
+                    <div class="invalid-feedback">Please fill this field !</div>
+                    <div class="valid-feedback">Looks good!</div>
                   </div>
 
                   <div class="mb-3">
@@ -86,7 +95,10 @@
                       aria-describedby="phone"
                       name="phone"
                       placeholder="ex : 081234567890"
+                      required
                     />
+                    <div class="invalid-feedback">Please fill this field !</div>
+                    <div class="valid-feedback">Looks good!</div>
                   </div>
                   <div
                     id="emailHelp"
@@ -97,21 +109,25 @@
                   </div>
 
                   <div class="mb-3">
-                    <label for="interest" class="form-label">Interest</label>
+                    <label for="interest" class="form-label form-check-label"
+                      >Interest</label
+                    >
                     <br />
-                    <div class="radio-input d-flex fs-5">
+                    <div class="form-check radio-input d-flex fs-5">
                       <input
-                        class="align-self-center"
+                        class="align-self-center form-check-input"
                         type="radio"
                         name="interest"
                         value="frontend"
+                        required
                       />
                       &nbspFrontend
                       <input
                         type="radio"
-                        class="ms-4 align-self-center"
+                        class="ms-4 align-self-center form-check-input"
                         name="interest"
                         value="backend"
+                        required
                       />
                       &nbspBackend
                     </div>
@@ -125,11 +141,18 @@
                     SUBMIT
                   </button>
 
-                  <button class="btn btn-primary btn-loading d-none" type="button" disabled>
-                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                  <button
+                    class="btn btn-primary btn-loading d-none"
+                    type="button"
+                    disabled
+                  >
+                    <span
+                      class="spinner-border spinner-border-sm"
+                      role="status"
+                      aria-hidden="true"
+                    ></span>
                     Loading...
                   </button>
-
                 </form>
               </div>
             </div>
@@ -168,6 +191,32 @@
         i++;
       }
       if (!validForm) alert("Must check some option!");
+    </script>
+
+    <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function () {
+        "use strict";
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll(".needs-validation");
+
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms).forEach(function (form) {
+          form.addEventListener(
+            "submit",
+            function (event) {
+              if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+
+              form.classList.add("was-validated");
+            },
+            false
+          );
+        });
+      })();
     </script>
   </body>
 </html>
