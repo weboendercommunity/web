@@ -37,11 +37,7 @@ body {
   position: sticky;
 }
 
-<<<<<<< HEAD
 @media (min-width: 0px) and (max-width: 1199.98px) {
-=======
-@media (min-width: 576px) and (max-width: 1199.98px) {
->>>>>>> origin
   .image-form {
     display: none;
   }
