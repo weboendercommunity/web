@@ -11,9 +11,27 @@ const storeToGsheets = () => {
   fetch(scriptURL, { method: "POST", body: new FormData(form) }).then(() => {
     btnLoading.classList.toggle("d-none");
     btnKirim.classList.toggle("d-none");
-    location.reload(true);
+    sweetAlert();
   });
 };
+
+const sweetAlert = () => {
+  Swal.fire({
+    title: '<strong>Thank You for Register!</strong>',
+    icon: 'success',
+    html:
+      'Klik Tombol Oke Untuk Bergabung di Grup WhatsApp'
+    ,showCloseButton: true,
+    showCancelButton: false,
+    focusConfirm: false,
+    confirmButtonText:
+      '<i class="fa fa-thumbs-up"></i> Oke',
+    confirmButtonAriaLabel: 'Thumbs up, great!',
+  }).then(function(){
+    window.location.href = "https://chat.whatsapp.com/J8AHL1xc1lj2dpN2s4b7WT";
+    //location.reload(true);
+  })
+  }
 
 // script validation
 
@@ -36,6 +54,7 @@ const storeToGsheets = () => {
           event.preventDefault();
           event.stopPropagation();
           storeToGsheets();
+          
         }
       },
       false
