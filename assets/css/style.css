@@ -37,7 +37,7 @@ body {
   position: sticky;
 }
 
-@media (min-width: 576px) and (max-width: 1199.98px) {
+@media (min-width: 0px) and (max-width: 1199.98px) {
   .image-form {
     display: none;
   }
