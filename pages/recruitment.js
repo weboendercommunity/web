@@ -29,7 +29,6 @@ const sweetAlert = () => {
     confirmButtonAriaLabel: 'Thumbs up, great!',
   }).then(function(){
     window.location.href = "https://chat.whatsapp.com/J8AHL1xc1lj2dpN2s4b7WT";
-    //location.reload(true);
   })
   }
 
